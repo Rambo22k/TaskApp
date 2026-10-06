@@ -27,6 +27,6 @@ export class NuevaTareaPage {
       return;
     }
     this.tareasService.agregar(this.formulario.getRawValue());
-    this.nav.navigateBack('/home');
+    this.nav.navigateRoot('/home');
   }
 }

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { Tarea } from '../models/tarea';
 
 const STORAGE_KEY = 'taskapp-tareas';
@@ -6,6 +7,8 @@ const STORAGE_KEY = 'taskapp-tareas';
 @Injectable({ providedIn: 'root' })
 export class TareasService {
   private tareas: Tarea[] = this.cargar();
+  private readonly cambios = new BehaviorSubject<Tarea[]>([...this.tareas]);
+  readonly tareas$ = this.cambios.asObservable();
 
   obtenerTodas(): Tarea[] {
     return [...this.tareas];
@@ -37,5 +40,6 @@ export class TareasService {
 
   private guardar(): void {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(this.tareas));
+    this.cambios.next([...this.tareas]);
   }
 }

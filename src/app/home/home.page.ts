@@ -11,7 +11,9 @@ import { TareasService } from '../services/tareas.service';
 export class HomePage {
   tareas: Tarea[] = [];
 
-  constructor(private readonly tareasService: TareasService) {}
+  constructor(private readonly tareasService: TareasService) {
+    this.tareasService.tareas$.subscribe(tareas => this.tareas = tareas);
+  }
 
   ionViewWillEnter(): void {
     this.tareas = this.tareasService.obtenerTodas();
