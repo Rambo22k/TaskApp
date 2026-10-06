@@ -1,0 +1,23 @@
+:host { --page-bg: #f5f7fb; }
+ion-content { --background: var(--page-bg); }
+ion-header ion-toolbar { --background: #fff; --color: #172554; }
+ion-title { font-weight: 750; letter-spacing: -.02em; }
+.welcome { padding: 28px 22px 18px; }
+.eyebrow { color: #6875a1; font-size: .7rem; font-weight: 800; letter-spacing: .14em; margin: 0 0 8px; }
+.welcome h1 { color: #182449; font-size: 2rem; font-weight: 800; margin: 0; }
+.welcome > p:last-child { color: #77809a; margin: 7px 0 0; }
+.task-list { background: transparent; padding: 0 14px 90px; }
+.task-item { --background: #fff; --border-radius: 16px; --padding-start: 14px; --inner-padding-end: 8px; --min-height: 82px; margin: 0 0 10px; border: 1px solid #edf0f7; border-radius: 16px; box-shadow: 0 4px 14px #1d2b5210; }
+ion-checkbox { --size: 21px; --checkbox-background-checked: #5267df; --border-color-checked: #5267df; margin-inline-end: 12px; }
+ion-label h2 { color: #202b4c; font-size: .98rem; font-weight: 700; margin: 0 0 5px; }
+ion-label p { color: #7d859a; font-size: .84rem; white-space: normal; }
+.completed { text-decoration: line-through; opacity: .55; }
+ion-badge { border-radius: 7px; font-size: .69rem; padding: 6px 8px; }
+.empty-state { display: grid; justify-items: center; text-align: center; padding: 70px 34px; }
+.empty-icon { align-items: center; background: #e9edff; border-radius: 22px; color: #5267df; display: flex; font-size: 2rem; height: 68px; justify-content: center; width: 68px; }
+.empty-state h2 { color: #202b4c; font-size: 1.12rem; margin: 18px 0 5px; }
+.empty-state p { color: #7d859a; line-height: 1.5; margin: 0; max-width: 250px; }
+.add-fab { margin: 0 8px 12px 0; }
+ion-fab-button { --background: #5267df; --background-activated: #3e51c4; --box-shadow: 0 8px 18px #5267df55; }
+.app-footer ion-toolbar { --background: #fff; --min-height: 38px; }
+.app-footer ion-title { color: #9aa1b3; font-size: .72rem; font-weight: 500; text-align: center; }

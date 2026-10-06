@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <ion-buttons slot="start"><ion-back-button defaultHref="/home" text=""></ion-back-button></ion-buttons>
+    <ion-title>Nueva tarea</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="form-content">
+  <div class="form-intro">
+    <p class="eyebrow">NUEVO OBJETIVO</p>
+    <h1>¿Qué tienes por hacer?</h1>
+    <p>Guarda los detalles y vuelve a tus tareas.</p>
+  </div>
+
+  <form [formGroup]="formulario" (ngSubmit)="guardar()" novalidate>
+    <ion-item class="field" lines="none">
+      <ion-label position="stacked">Título <span>*</span></ion-label>
+      <ion-input formControlName="titulo" placeholder="Ej. jugar Fortnite" maxlength="80" autocomplete="off"></ion-input>
+    </ion-item>
+    <ion-note color="danger" class="error" *ngIf="formulario.controls.titulo.touched && formulario.controls.titulo.hasError('required')">Escribe un título para la tarea.</ion-note>
+    <ion-note color="danger" class="error" *ngIf="formulario.controls.titulo.touched && formulario.controls.titulo.hasError('minlength')">El título debe tener al menos 5 caracteres.</ion-note>
+
+    <ion-item class="field description-field" lines="none">
+      <ion-label position="stacked">Descripción <span>*</span></ion-label>
+      <ion-textarea formControlName="descripcion" placeholder="Añade un detalle breve" rows="4" maxlength="160" autoGrow="true"></ion-textarea>
+    </ion-item>
+    <ion-note color="danger" class="error" *ngIf="formulario.controls.descripcion.touched && formulario.controls.descripcion.invalid">La descripción es obligatoria (máximo 160 caracteres).</ion-note>
+
+    <ion-item class="field" lines="none">
+      <ion-label position="stacked">Prioridad</ion-label>
+      <ion-select formControlName="prioridad" interface="popover" aria-label="Prioridad de la tarea">
+        <ion-select-option value="Alta">Alta</ion-select-option>
+        <ion-select-option value="Media">Media</ion-select-option>
+        <ion-select-option value="Baja">Baja</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-button expand="block" type="submit" class="save-button">Guardar tarea <ion-icon slot="end" name="arrow-forward-outline"></ion-icon></ion-button>
+    <ion-button expand="block" fill="clear" color="medium" routerLink="/home">Cancelar</ion-button>
+  </form>
+</ion-content>

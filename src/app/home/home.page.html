@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <ion-title>TaskApp</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="task-content">
+  <section class="welcome">
+    <p class="eyebrow">ORGANIZA TU SEMANA</p>
+    <h1>Mis tareas</h1>
+    <p>{{ tareas.length }} {{ tareas.length === 1 ? 'tarea pendiente o completada' : 'tareas en total' }}</p>
+  </section>
+
+  <ion-list lines="none" class="task-list" *ngIf="tareas.length; else emptyState">
+    <ion-item class="task-item" *ngFor="let tarea of tareas">
+      <ion-checkbox slot="start" [checked]="tarea.completada" (ionChange)="cambiarEstado(tarea, $event)" [attr.aria-label]="'Marcar ' + tarea.titulo + ' como completada'"></ion-checkbox>
+      <ion-label>
+        <h2 [class.completed]="tarea.completada">{{ tarea.titulo }}</h2>
+        <p [class.completed]="tarea.completada">{{ tarea.descripcion }}</p>
+      </ion-label>
+      <ion-badge slot="end" [color]="tarea.prioridad === 'Alta' ? 'danger' : tarea.prioridad === 'Media' ? 'warning' : 'success'">{{ tarea.prioridad }}</ion-badge>
+      <ion-button slot="end" fill="clear" color="medium" (click)="eliminar(tarea.id)" [attr.aria-label]="'Eliminar ' + tarea.titulo">
+        <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ng-template #emptyState>
+    <div class="empty-state">
+      <div class="empty-icon"><ion-icon name="checkmark-done-outline"></ion-icon></div>
+      <h2>Todo empieza aquí</h2>
+      <p>Añade tu primera tarea y mantén tus deberes bajo control.</p>
+    </div>
+  </ng-template>
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end" class="add-fab">
+    <ion-fab-button routerLink="/nueva-tarea" aria-label="Crear tarea">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+
+<ion-footer class="app-footer">
+  <ion-toolbar><ion-title size="small">Un paso a la vez. Vas muy bien.</ion-title></ion-toolbar>
+</ion-footer>

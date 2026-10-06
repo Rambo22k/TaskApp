@@ -1,0 +1,15 @@
+ion-content { --background: #f5f7fb; }
+ion-header ion-toolbar { --background: #fff; --color: #172554; }
+ion-title { font-weight: 750; }
+.form-intro { padding: 30px 24px 18px; }
+.eyebrow { color: #6875a1; font-size: .7rem; font-weight: 800; letter-spacing: .14em; margin: 0 0 9px; }
+.form-intro h1 { color: #182449; font-size: 1.7rem; font-weight: 800; line-height: 1.15; margin: 0; }
+.form-intro > p:last-child { color: #7d859a; margin: 9px 0 0; }
+form { padding: 0 18px 28px; }
+.field { --background: #fff; --border-radius: 14px; --padding-start: 15px; --inner-padding-end: 14px; border: 1px solid #e9edf5; border-radius: 14px; margin: 10px 0 5px; }
+ion-label[position="stacked"] { color: #303b5c; font-size: .85rem; font-weight: 700; margin: 12px 0 4px; }
+ion-label span { color: #e35b68; }
+ion-input, ion-textarea, ion-select { --color: #283454; font-size: .95rem; }
+.description-field { min-height: 120px; }
+.error { display: block; font-size: .76rem; margin: 3px 10px 7px; }
+.save-button { --background: #5267df; --border-radius: 12px; --box-shadow: 0 7px 15px #5267df38; height: 50px; font-weight: 700; margin-top: 25px; }
