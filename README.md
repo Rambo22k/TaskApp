@@ -1,35 +1,45 @@
 # TaskApp
 
-Aplicación híbrida de gestión de tareas académicas creada con Ionic y Angular. Permite crear tareas, asignarles prioridad, marcar su estado, eliminarlas y conservar los datos en el navegador mediante `localStorage`.
+Aplicación móvil híbrida para organizar deberes y tareas académicas, desarrollada con Ionic y Angular.
+
+**Repositorio:** [github.com/Rambo22k/TaskApp](https://github.com/Rambo22k/TaskApp)
+
+## Funcionalidades
+
+- Lista de tareas con título, descripción y prioridad Alta, Media o Baja.
+- Creación de tareas mediante un formulario reactivo con validaciones.
+- Título obligatorio con un mínimo de 5 caracteres.
+- Descripción obligatoria de hasta 160 caracteres.
+- Marcado de tareas completadas con el texto tachado.
+- Eliminación de tareas.
+- Persistencia en `localStorage` para conservar los datos al recargar la aplicación en el mismo navegador y dispositivo.
+- Interfaz adaptada a dispositivos móviles con componentes Ionic.
 
 ## Requisitos
 
-- Node.js y npm instalados.
+- Node.js y npm.
 - Ionic CLI (opcional): `npm install -g @ionic/cli`.
 
-## Instalación y ejecución
+## Instalar y ejecutar
 
-Desde la carpeta del proyecto, ejecuta:
+En la carpeta del proyecto, instala las dependencias y ejecuta el servidor de desarrollo:
 
 ```bash
 npm install
 npx ionic serve
 ```
 
-También puedes iniciar el servidor de Angular con `npm start`. La aplicación se abrirá en el navegador y se recargará al guardar cambios.
+También puedes iniciar el servidor de Angular con:
 
-## Funciones
-
-- Listado con título, descripción, prioridad y estado.
-- Formulario reactivo: título obligatorio con mínimo 5 caracteres y descripción obligatoria de hasta 160 caracteres.
-- Completar y eliminar tareas.
-- Persistencia local en el navegador. Los datos pertenecen al navegador y dispositivo donde se crean.
+```bash
+npm start
+```
 
 ## Estructura principal
 
-- `src/app/home`: listado principal.
-- `src/app/nueva-tarea`: formulario de alta.
-- `src/app/models/tarea.ts`: modelo e interfaz de prioridad.
-- `src/app/services/tareas.service.ts`: estado y persistencia local.
+- `src/app/home`: pantalla principal y listado de tareas.
+- `src/app/nueva-tarea`: formulario para crear una tarea.
+- `src/app/models/tarea.ts`: interfaz de datos y tipo de prioridad.
+- `src/app/services/tareas.service.ts`: operaciones y persistencia de tareas.
 
 
